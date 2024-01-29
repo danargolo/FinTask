@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    image: danargolo/fintask_frontend
+    container_name: frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - './frontend:/usr/local/app'
+    depends_on:
+      - backend
+    networks:
+      - backend
+      - frontend
+
+  backend:
+    image: danargolo/fintask_backend
+    container_name: backend
+    ports:
+      - '3002:3002'
+    volumes:
+      - './backend:/usr/local/app'
+    networks:
+      - backend
+
+  
+  db:
+    image: mongo
+    container_name: db
+    environment:
+      MONGO_INITDB_DATABASE: fintask
+    ports:
+      - "27017:27017"
+    depends_on:
+      - backend
+    volumes:
+      - data:/data/db
+    networks:
+      - backend
+
+  portainer: 
+    container_name: portainer
+    image: portainer/portainer-ce:alpine
+    command: -H unix:///var/run/docker.sock
+    ports: 
+      - "9000:9000"
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    networks:
+      - backend
+      - frontend
+
+volumes:
+  data:
+
+networks:
+  backend:
+  frontend:
