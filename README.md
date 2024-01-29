@@ -1,4 +1,4 @@
-#FinTask
+# FinTask
 ## Descrição
 O aplicativo FinTask é uma ferramenta de controle financeiro pessoal, permitindo que os usuários gerenciem suas receitas, despesas de maneira eficiente.
 
@@ -6,10 +6,7 @@ O aplicativo FinTask é uma ferramenta de controle financeiro pessoal, permitind
 - Cadastro de transações (receitas e despesas).
 - Visualização de receitas e despesas.
 
-### Pré-requisitos
-  - Docker
-
-### Docker e Docker Compose
+## Docker e Docker Compose
 Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina.
 
 1. Clone o repositório
