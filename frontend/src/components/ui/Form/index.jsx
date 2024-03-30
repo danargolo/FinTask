@@ -1,7 +1,7 @@
 import * as Styled from './styles';
-import { useFinanceContext } from '../../context';
+import { useFinanceContext } from '../../../context';
 import { useEffect } from 'react';
-import { formatCurrency } from '../../utils/mask/currencyFormater';
+import { formatCurrency } from '../../../utils/mask/currencyFormater';
 
 export const Form = ({ data: { input, select }, children, ...rest }) => {
   const { value, setValue, setDisabled } = useFinanceContext();

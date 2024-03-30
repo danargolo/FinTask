@@ -1,12 +1,12 @@
-import { Form } from '../../components/Form';
+import { Form } from '../../components/ui/Form';
 import { useEffect, useState } from 'react';
-import { Button } from '../../components/Buttom';
+import { Button } from '../../components/ui/Buttom';
 import { useFinanceContext } from '../../context/finance';
 
 import * as Styled from './styles';
 import * as constant from '../../utils/constants/financeInputs';
 import { fetchData, postData } from '../../services/api';
-import { Dash } from '../../components/Dash';
+import { Dash } from '../../components/ui/Dash';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 
